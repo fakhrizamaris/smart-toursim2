@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar - Danau Toba Travel</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="container register-container">
+      <div class="row justify-content-center w-100">
+        <div class="register-card">
+          <div class="col-lg-12">
+            <div class="form-section">
+              <div class="text-center mb-4">
+                <h3 class="fw-bold mb-2">Daftar Sekarang</h3>
+                <p class="text-muted">Mulai petualangan Anda bersama kami</p>
+              </div>
+
+              <form id="registerForm">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label">Nama Depan</label>
+                    <div class="input-icon">
+                      <i class="fas fa-user"></i>
+                      <input type="text" class="form-control" id="firstName" placeholder="Masukkan nama depan" required />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label">Nama Belakang</label>
+                    <div class="input-icon">
+                      <i class="fas fa-user"></i>
+                      <input type="text" class="form-control" id="lastName" placeholder="Masukkan nama belakang" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" class="form-control" id="email" placeholder="nama@email.com" required />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Nomor Telepon</label>
+                  <div class="input-icon">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" class="form-control" id="phone" placeholder="08xxxxxxxxxx" required />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Kata Sandi</label>
+                  <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="form-control" id="password" placeholder="Minimal 8 karakter" required />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="interest" class="form-label">Minat Wisata</label>
+                  <select class="form-control" id="interest" required>
+                    <option value="">Pilih minat wisata Anda</option>
+                    <option value="budaya">Wisata Budaya</option>
+                    <option value="alam">Wisata Alam</option>
+                    <option value="kuliner">Wisata Kuliner</option>
+                    <option value="fotografi">Fotografi</option>
+                    <option value="petualangan">Petualangan</option>
+                  </select>
+                </div>
+
+                <div class="mb-4 form-check">
+                  <input type="checkbox" class="form-check-input" id="terms" required />
+                  <label class="form-check-label" for="terms"> Saya setuju dengan <a href="#" style="color: var(--primary-blue)">syarat dan ketentuan</a> </label>
+                </div>
+
+                <button type="submit" class="btn btn-register w-100 mb-3">Daftar Sekarang</button>
+
+                <div class="divider">
+                  <span>atau</span>
+                </div>
+
+                <div class="text-center">
+                  <p class="mb-3">Sudah punya akun? <a href="#" style="color: var(--primary-blue); font-weight: 500">Masuk di sini</a></p>
+                  <a href="landingpage.html" class="btn-back" style="color: var(--warning-yellow)"> <i class="fas fa-arrow-left me-2"></i>Kembali ke Beranda </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('password').value;
+        const interest = document.getElementById('interest').value;
+        const terms = document.getElementById('terms').checked;
+
+        // Validasi
+        if (!firstName || !lastName || !email || !phone || !password || !interest || !terms) {
+          alert('Mohon lengkapi semua field yang diperlukan!');
+          return;
+        }
+
+        if (password.length < 8) {
+          alert('Kata sandi harus minimal 8 karakter!');
+          return;
+        }
+
+        // Simulasi pendaftaran berhasil
+        alert(`Selamat datang ${firstName}! Pendaftaran Anda berhasil. Selamat bergabung dengan Danau Toba Travel.`);
+
+        // Redirect ke halaman utama (ganti dengan URL yang sesuai)
+        // window.location.href = 'index.html';
+      });
+
+      // Smooth focus effects
+      const inputs = document.querySelectorAll('.form-control');
+      inputs.forEach((input) => {
+        input.addEventListener('focus', function () {
+          this.parentElement.classList.add('focused');
+        });
+
+        input.addEventListener('blur', function () {
+          this.parentElement.classList.remove('focused');
+        });
+      });
+    </script>
+  </body>
+</html>

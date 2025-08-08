@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danau Toba Travel - Surga Tersembunyi Sumatera Utara</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+      #home {
+        position: relative;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Lake_Toba_and_the_surrounding_hills.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        overflow: hidden;
+      }
+
+      #home::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4); /* Opacity 40% */
+        z-index: 1;
+      }
+
+      #home .container {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#"> Danau Toba Travel </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item fw-bold">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#destinations">Destinasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://wa.me/+6281959243545">Kontak</a>
+            </li>
+            <li class="nav-item mx-5">
+              <a class="btn btn-outline-warning" href="register.html">Daftar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="bg-primary text-white py-5" style="min-height: 100vh">
+      <div class="container">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4">Jelajahi Keajaiban Danau Toba</h1>
+            <p class="lead mb-4">Rasakan pengalaman tak terlupakan di danau Vulkanik terbesar di dunia. Nikmati keindahan alam, budaya Batak yang kaya, dan keramahan penduduk lokal.</p>
+            <a href="#destinations" class="btn btn-warning btn-lg">Mulai Petualangan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-4 col-6 mb-4">
+            <h2 class="display-6 fw-bold">1,145</h2>
+            <p class="mb-0">Km² Luas Danau</p>
+          </div>
+          <div class="col-md-4 col-6 mb-4">
+            <h2 class="display-6 fw-bold">74,000</h2>
+            <p class="mb-0">Tahun Terbentuk</p>
+          </div>
+          <div class="col-md-4 col-6 mb-4">
+            <h2 class="display-6 fw-bold">450</h2>
+            <p class="mb-0">Meter Kedalaman</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinations" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Destinasi Populer</h2>
+          <p class="lead text-muted">Temukan tempat-tempat menawan di sekitar Danau Toba</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card shadow-sm h-100">
+              <div
+                class="card-img-top"
+                style="height: 200px; background-image: url('https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/257/2025/01/06/patung-yesus-samosir-1514044515.jpg'); background-size: cover; background-position: center"
+              ></div>
+
+              <div class="card-body">
+                <h5 class="card-title">Pulau Samosir</h5>
+                <p class="card-text">Jantung budaya Batak dengan pemandangan danau yang memukau. Nikmati wisata budaya dan kuliner khas Batak.</p>
+                <a href="pulau-samosir.html" class="btn btn-outline-warning">Detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card shadow-sm h-100">
+              <div
+                class="card-img-top"
+                style="height: 200px; background-image: url('https://www.rentalcarmedan.com/wp-content/themes/twentynineteen/cache/09/desa-wisata-tomok-09a1e184.jpeg'); background-size: cover; background-position: center"
+              ></div>
+              <div class="card-body">
+                <h5 class="card-title">Tomok</h5>
+                <p class="card-text">Makam Raja Sidabutar dan kerajinan tenun ulos tradisional. Pelajari sejarah dan budaya Batak yang kaya.</p>
+                <a href="tomok.html" class="btn btn-outline-warning">Detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card shadow-sm h-100">
+              <div class="card-img-top" style="height: 200px; background-image: url('https://www.ninna.id/wp-content/uploads/2022/05/Batu-Lihi-1.jpg'); background-size: cover; background-position: center"></div>
+              <div class="card-body">
+                <h5 class="card-title">Batu Lihi</h5>
+                <p class="card-text">Spot Wisata yang sangat cocok untuk bersantai dengan keluarga. Disini pandangan langsung mengarah ke Danau Toba yang indah.</p>
+                <a href="batu-lihi.html" class="btn btn-outline-warning">Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h5 class="mb-3">Danau Toba Travel</h5>
+            <p class="text-muted">Mewujudkan perjalanan impian Anda ke Danau Toba dengan pelayanan terbaik dan pengalaman tak terlupakan.</p>
+            <div class="d-flex gap-3 mt-3">
+              <a href="#" class="text-light fs-4"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-light fs-4"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-light fs-4"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-light fs-4"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h6 class="mb-3">Link Cepat</h6>
+            <ul class="list-unstyled">
+              <li><a href="#home" class="text-muted text-decoration-none">Beranda</a></li>
+              <li><a href="#destinations" class="text-muted text-decoration-none">Destinasi</a></li>
+              <li><a href="#packages" class="text-muted text-decoration-none">Paket Wisata</a></li>
+              <li><a href="#about" class="text-muted text-decoration-none">Tentang Kami</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="mb-3">Kontak Info</h6>
+            <ul class="list-unstyled">
+              <li class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Medan, Sumatera Utara</li>
+              <li class="text-muted"><i class="fas fa-phone me-2"></i>+62 813-1234-5678</li>
+              <li class="text-muted"><i class="fas fa-envelope me-2"></i>info@danautoba-travel.com</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 border-secondary" />
+        <div class="text-center">
+          <p class="mb-0 text-muted">&copy; 2025 Danau Toba Travel. Semua hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
