@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  padding: 40px 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 40px;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.name-section h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.name-section .subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.contact-info div {
+  margin-bottom: 5px;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.photo-container {
+  flex-shrink: 0;
+  width: 140px;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 40px;
+}
+
+.section {
+  margin-bottom: 35px;
+}
+
+.section-title {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #3498db;
+  display: inline-block;
+}
+
+.about-text {
+  text-align: justify;
+  color: #555;
+  line-height: 1.7;
+}
+
+.info-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 160px 20px 1fr;
+  align-items: start;
+  padding: 8px 0;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.info-separator {
+  color: #777;
+}
+
+.info-value {
+  color: #333;
+}
+
+.info-value a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.info-value a:hover {
+  text-decoration: underline;
+}
+
+.education-list,
+.experience-list,
+.certification-list {
+  list-style: none;
+}
+
+.education-item,
+.experience-item,
+.certification-item {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #3498db;
+}
+
+.education-item h4,
+.experience-item h4,
+.certification-item h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.education-item .institution,
+.experience-item .organization,
+.certification-item .institution {
+  color: #666;
+  margin-bottom: 3px;
+  font-weight: 500;
+}
+
+.education-item .period,
+.experience-item .period,
+.certification-item .period {
+  color: #888;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.experience-item .description,
+.certification-item .description {
+  margin-top: 10px;
+}
+
+.experience-item ul,
+.certification-item ul {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.experience-item li,
+.certification-item li {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.skill-category h5 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.skill-category p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.certification-links {
+  margin-top: 8px;
+}
+
+.certification-links a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-right: 15px;
+}
+
+.certification-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo-container {
+    width: 120px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .name-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .content {
+    padding: 30px 20px;
+  }
+
+  .info-row {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .info-separator {
+    display: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
