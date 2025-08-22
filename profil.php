@@ -33,8 +33,8 @@ $path_foto_profil = ($foto_profil === 'default.png') ? 'img/' . $foto_profil : '
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Saya - Danau Toba Travel</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/profil.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -52,7 +52,7 @@ $path_foto_profil = ($foto_profil === 'default.png') ? 'img/' . $foto_profil : '
                             <span><?php echo htmlspecialchars($_SESSION['first_name']); ?></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUserDropdown">
-                            <li><a class="dropdown-item active" href="profil.php">Profil Saya</a></li>
+                            <li><a class="dropdown-item" href="profil.php">Profil Saya</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

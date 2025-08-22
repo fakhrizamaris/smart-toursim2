@@ -46,3 +46,12 @@ body {
   margin-top: 56px; /* Push content down below the navbar */
   padding: 1.5rem;
 }
+
+/* Perbaikan Dropdown Menu pada Tampilan Seluler */
+
+/* Pastikan navbar berada di lapisan teratas */
+.navbar.fixed-top {
+  z-index: 1030; /* Nilai default Bootstrap untuk navbar */
+}
+
+/* Pastikan dropdown menu selalu terlihat di atas konten lain */

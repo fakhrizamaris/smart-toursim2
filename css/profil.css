@@ -21,11 +21,20 @@ body {
   height: 1px;
   opacity: 0;
 }
+/* Custom Styling untuk Link Aktif di Halaman Profil */
+
 .account-settings-links .list-group-item.active {
-  font-weight: bold !important;
-  background-color: #000000; /* Warna abu-abu terang untuk item aktif */
-  border-color: #a0a0a0; /* Warna biru untuk border kiri */
-  border-left-width: 3px;
+  background-color: #282829; /* Warna latar abu-abu yang sangat lembut */
+  color: #ffffff; /* Warna teks biru primer agar tetap jelas */
+  border-left: 4px solid #573c3c; /* Garis tegas di kiri sebagai penanda utama */
+  border-color: #b3b3b3; /* Menyamakan warna border */
+  font-weight: 600; /* Membuat teks sedikit lebih tebal */
+}
+
+/* (Opsional) Mengubah tampilan saat kursor diarahkan (hover) agar konsisten */
+.account-settings-links .list-group-item:not(.active):hover {
+  background-color: #f8f9fa; /* Warna latar sedikit lebih gelap saat hover */
+  color: #343a40;
 }
 .account-settings-links .list-group-item {
   border-top-left-radius: 0;

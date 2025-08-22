@@ -50,11 +50,16 @@ if ($result && mysqli_num_rows($result) > 0) {
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold ms-5" href="dashboard.php">Danau Toba Travel</a>
-      <div class="collapse navbar-collapse">
+      <a class="navbar-brand fw-bold ms-3" href="dashboard.php">Danau Toba Travel</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center mx-5" href="#" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarUserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="<?php echo htmlspecialchars($path_foto_navbar); ?>" alt="Profil" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
               <span><?php echo htmlspecialchars($_SESSION['first_name']); ?></span>
             </a>
