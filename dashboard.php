@@ -128,7 +128,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <td>Rp <?= number_format($data['total_bayar'], 0, ',', '.') ?></td>
                         <td><?= date('d M Y', strtotime($data['tgl_pemesanan'])) ?></td>
                         <td>
-                          <a href="invoice.php?id=<?= $data['id'] ?>" class="btn btn-info btn-sm">
+                          <a href="invoice.php?id=<?= $data['id'] ?>" class="btn btn-success btn-sm">
                             <i class="fas fa-eye"></i> Lihat Invoice
                           </a>
                         </td>
