@@ -1,141 +1,68 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Masuk - Danau Toba Travel</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/register.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/login.css">
+    <title>Login - Danau Toba Travel</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <div class="container-fluid login-container">
-      <div class="login-card">
-        <div class="form-section">
-          <div class="text-center mb-4">
-            <h3 class="fw-bold mb-2">Selamat Datang</h3>
-            <p class="text-muted">Masuk ke akun Danau Toba Travel Anda</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card my-5">
+            <form class="card-body cardbody-light p-lg-5" method="POST" action="login_process.php">
+              <h2 class="text-center text-dark mb-5">Login</h2>
+
+              <div id="notification"></div>
+
+              <div class="mb-3">
+                <input type="email" class="form-control" name="email" placeholder="Email" required />
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" required />
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-dark px-5 mb-5 w-100">Login</button>
+              </div>
+              <div class="form-text text-center mb-5 text-dark">Belum punya akun? <a href="register.html" class="text-dark fw-bold"> Buat Akun</a></div>
+            </form>
           </div>
-
-          <div id="alertContainer"></div>
-
-          <form id="loginForm">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <div class="input-icon">
-                <i class="fas fa-envelope"></i>
-                <input type="email" class="form-control" id="email" placeholder="nama@email.com" required />
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="password" class="form-label">Kata Sandi</label>
-              <div class="input-icon">
-                <i class="fas fa-lock"></i>
-                <input type="password" class="form-control" id="password" placeholder="Masukkan kata sandi" required />
-              </div>
-            </div>
-
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="remember" />
-              <label class="form-check-label" for="remember">Ingat saya</label>
-            </div>
-
-            <button type="submit" class="btn btn-login text-white w-100 mb-3">Masuk</button>
-
-            <div class="text-center mb-3">
-              <a href="#" style="color: #667eea; text-decoration: none;">Lupa kata sandi?</a>
-            </div>
-
-            <div class="divider">
-              <span>atau</span>
-            </div>
-
-            <div class="text-center">
-              <p class="mb-3">Belum punya akun? <a href="registrasi.html" style="color: #667eea; font-weight: 500">Daftar di sini</a></p>
-              <a href="index.html" class="btn-back" style="color: #ffc107;"> 
-                <i class="fas fa-arrow-left me-2"></i>Kembali ke Beranda 
-              </a>
-            </div>
-          </form>
         </div>
       </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
     <script>
-      document.getElementById('loginForm').addEventListener('submit', function (e) {
-        e.preventDefault();
+      document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const success = urlParams.get('success');
+        const notificationDiv = document.getElementById('notification');
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const remember = document.getElementById('remember').checked;
+        let message = '';
+        let messageType = '';
 
-        // Validasi dasar
-        if (!email || !password) {
-          showAlert('Mohon lengkapi email dan kata sandi!', 'danger');
-          return;
+        if (error) {
+          messageType = 'danger';
+          if (error === 'wrong_password' || error === 'user_not_found') {
+            message = 'Email atau password yang Anda masukkan salah!';
+          } else if (error === 'empty_fields') {
+            message = 'Mohon isi semua kolom yang tersedia.';
+          } else {
+            message = 'Terjadi kesalahan. Silakan coba lagi.';
+          }
+        } else if (success) {
+          messageType = 'success';
+          if (success === 'registration_complete') {
+            message = 'Registrasi berhasil! Silakan login.';
+          }
         }
 
-        // Kirim data ke server
-        const formData = new FormData();
-        formData.append('email', email);
-        formData.append('password', password);
-        formData.append('remember', remember ? '1' : '0');
-
-        fetch('php/login.php', {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            showAlert('Login berhasil! Mengarahkan ke halaman utama...', 'success');
-            setTimeout(() => {
-              window.location.href = 'dashboard.html'; // atau halaman tujuan setelah login
-            }, 2000);
-          } else {
-            showAlert(data.message || 'Login gagal. Silakan coba lagi.', 'danger');
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          showAlert('Terjadi kesalahan sistem. Silakan coba lagi.', 'danger');
-        });
-      });
-
-      function showAlert(message, type) {
-        const alertContainer = document.getElementById('alertContainer');
-        const alertDiv = document.createElement('div');
-        alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
-        alertDiv.innerHTML = `
-          ${message}
-          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        `;
-        
-        alertContainer.innerHTML = '';
-        alertContainer.appendChild(alertDiv);
-        
-        // Auto hide setelah 5 detik
-        setTimeout(() => {
-          if (alertDiv.parentNode) {
-            alertDiv.remove();
-          }
-        }, 5000);
-      }
-
-      // Smooth focus effects
-      const inputs = document.querySelectorAll('.form-control');
-      inputs.forEach((input) => {
-        input.addEventListener('focus', function () {
-          this.parentElement.classList.add('focused');
-        });
-
-        input.addEventListener('blur', function () {
-          this.parentElement.classList.remove('focused');
-        });
+        if (message) {
+          notificationDiv.innerHTML = `<div class="alert alert-${messageType}">${message}</div>`;
+        }
       });
     </script>
   </body>

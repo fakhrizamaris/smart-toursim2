@@ -1,143 +1,80 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daftar - Danau Toba Travel</title>
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/register.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
+    <title>Register - Danau Toba Travel</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/register.css" />
   </head>
   <body>
-    <div class="container register-container">
-      <div class="row justify-content-center w-100">
-        <div class="register-card">
-          <div class="col-lg-12">
-            <div class="form-section">
-              <div class="text-center mb-4">
-                <h3 class="fw-bold mb-2">Daftar Sekarang</h3>
-                <p class="text-muted">Mulai petualangan Anda bersama kami</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card my-5">
+            <form class="card-body cardbody-color p-lg-5" method="POST" action="register_process.php">
+              <h2 class="text-center text-dark mb-5">Registrasi Akun Baru</h2>
+
+              <div id="notification"></div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" name="first_name" placeholder="Nama Depan" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" name="last_name" placeholder="Nama Belakang" required />
+                </div>
               </div>
-
-              <form id="registerForm">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="firstName" class="form-label">Nama Depan</label>
-                    <div class="input-icon">
-                      <i class="fas fa-user"></i>
-                      <input type="text" class="form-control" id="firstName" placeholder="Masukkan nama depan" required />
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="lastName" class="form-label">Nama Belakang</label>
-                    <div class="input-icon">
-                      <i class="fas fa-user"></i>
-                      <input type="text" class="form-control" id="lastName" placeholder="Masukkan nama belakang" required />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <div class="input-icon">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" class="form-control" id="email" placeholder="nama@email.com" required />
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="phone" class="form-label">Nomor Telepon</label>
-                  <div class="input-icon">
-                    <i class="fas fa-phone"></i>
-                    <input type="tel" class="form-control" id="phone" placeholder="08xxxxxxxxxx" required />
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="password" class="form-label">Kata Sandi</label>
-                  <div class="input-icon">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" class="form-control" id="password" placeholder="Minimal 8 karakter" required />
-                  </div>
-                </div>
-
-                <div class="mb-4">
-                  <label for="interest" class="form-label">Minat Wisata</label>
-                  <select class="form-control" id="interest" required>
-                    <option value="">Pilih minat wisata Anda</option>
-                    <option value="budaya">Wisata Budaya</option>
-                    <option value="alam">Wisata Alam</option>
-                    <option value="kuliner">Wisata Kuliner</option>
-                    <option value="fotografi">Fotografi</option>
-                    <option value="petualangan">Petualangan</option>
-                  </select>
-                </div>
-
-                <div class="mb-4 form-check">
-                  <input type="checkbox" class="form-check-input" id="terms" required />
-                  <label class="form-check-label" for="terms"> Saya setuju dengan <a href="#" style="color: var(--primary-blue)">syarat dan ketentuan</a> </label>
-                </div>
-
-                <button type="submit" class="btn btn-register w-100 mb-3">Daftar Sekarang</button>
-
-                <div class="divider">
-                  <span>atau</span>
-                </div>
-
-                <div class="text-center">
-                  <p class="mb-3">Sudah punya akun? <a href="#" style="color: var(--primary-blue); font-weight: 500">Masuk di sini</a></p>
-                  <a href="landingpage.html" class="btn-back" style="color: var(--warning-yellow)"> <i class="fas fa-arrow-left me-2"></i>Kembali ke Beranda </a>
-                </div>
-              </form>
-            </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" name="email" placeholder="Email" required />
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" required />
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" name="cpassword" placeholder="Konfirmasi Password" required />
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" name="phone" placeholder="Nomor Telepon" required />
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" name="address" rows="3" placeholder="Alamat" required></textarea>
+              </div>
+              <div class="mb-3">
+                <select class="form-select" name="gender" required>
+                  <option selected disabled value="">Pilih Jenis Kelamin</option>
+                  <option value="pria">Pria</option>
+                  <option value="wanita">Wanita</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="dob" class="form-label">Tanggal Lahir</label>
+                <input type="date" class="form-control" name="dob" id="dob" required />
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-dark px-5 mb-5 w-100">Register</button>
+              </div>
+              <div class="form-text text-center mb-5 text-dark">Sudah punya akun? <a href="login.html" class="text-dark fw-bold"> Login disini</a></div>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
     <script>
-      document.getElementById('registerForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const password = document.getElementById('password').value;
-        const interest = document.getElementById('interest').value;
-        const terms = document.getElementById('terms').checked;
-
-        // Validasi
-        if (!firstName || !lastName || !email || !phone || !password || !interest || !terms) {
-          alert('Mohon lengkapi semua field yang diperlukan!');
-          return;
+      // Kode JavaScript untuk notifikasi tetap sama seperti sebelumnya
+      document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const notificationDiv = document.getElementById('notification');
+        if (error) {
+          let message = '';
+          if (error === 'password_mismatch') message = 'Konfirmasi password tidak sesuai!';
+          else if (error === 'email_exists') message = 'Email yang Anda masukkan sudah terdaftar!';
+          else message = 'Terjadi kesalahan, silakan coba lagi.';
+          notificationDiv.innerHTML = `<div class="alert alert-danger">${message}</div>`;
         }
-
-        if (password.length < 8) {
-          alert('Kata sandi harus minimal 8 karakter!');
-          return;
-        }
-
-        // Simulasi pendaftaran berhasil
-        alert(`Selamat datang ${firstName}! Pendaftaran Anda berhasil. Selamat bergabung dengan Danau Toba Travel.`);
-
-        // Redirect ke halaman utama (ganti dengan URL yang sesuai)
-        // window.location.href = 'index.html';
-      });
-
-      // Smooth focus effects
-      const inputs = document.querySelectorAll('.form-control');
-      inputs.forEach((input) => {
-        input.addEventListener('focus', function () {
-          this.parentElement.classList.add('focused');
-        });
-
-        input.addEventListener('blur', function () {
-          this.parentElement.classList.remove('focused');
-        });
       });
     </script>
   </body>
